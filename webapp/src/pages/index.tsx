@@ -5,6 +5,7 @@ import { VStack, Heading, Box, LinkOverlay, LinkBox } from "@chakra-ui/layout"
 import { Text, Button } from "@chakra-ui/react"
 import { useState, useEffect } from "react"
 import { ethers } from "ethers"
+import ReadERC20 from "../components/ReadERC20"
 
 declare let window: any
 
@@ -96,11 +97,14 @@ const Home: NextPage = () => {
         ) : (
           <></>
         )}
-        <Box my={4} p={4} w="100%" borderWidth="1px" borderRadius="lg">
+        <Box mb={0} p={4} w="100%" borderWidth="1px" borderRadius="lg">
           <Heading my={4} fontSize="xl">
-            Task 1
+            Read ClassToken Info
           </Heading>
-          <Text>local chain with hardhat</Text>
+          <ReadERC20
+            addressContract="0x5FbDB2315678afecb367f032d93F642f64180aa3"
+            currentAccount={currentAccount}
+          />
         </Box>
 
         <Box my={4} p={4} w="100%" borderWidth="1px" borderRadius="lg">
